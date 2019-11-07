@@ -40,7 +40,7 @@
                 <div class="search_box">
                     <form method="get" action="<?php echo base_url('search') ?>">
                         <input type="text" placeholder="Search for Products" name="search">
-                        <input type="submit" value="SEARCH">
+                        <input type="submit" class="btn btn-primary" value="search"/>
                     </form>
                 </div>
                 <div class="shopping_cart">
@@ -55,10 +55,12 @@
                 $customer_id = $this->session->userdata('customer_id');
                 if ($customer_id) {
                     ?>
-                    <div class="login"><a href="<?php echo base_url('/customer/logout'); ?>">Logout</a></div>
+                    <button type="button" onclick="location.href='<?php echo base_url('/customer/logout'); ?>'" class="btn btn-primary ml-3">Login</button>
+                    <!-- <div class="login"><a href="<?php echo base_url('/customer/logout'); ?>">Logout</a></div> -->
                 <?php } else {
                     ?>
-                    <div class="login"><a href="<?php echo base_url('/customer/login'); ?>">login</a></div>
+                    <!-- <div class="login"><a href="<?php echo base_url('/customer/login'); ?>">login</a></div> -->
+                    <button type="button" onclick="location.href='<?php echo base_url('/customer/login'); ?>'" class="btn btn-primary ml-3">Login</button>
 
                 <?php
                 }
